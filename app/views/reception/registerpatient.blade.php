@@ -2,50 +2,49 @@
 @section('main')
 <h1 class="page-title"><i class="icon-th-large"></i>Register Patient</h1>
 <div class="widget-content">
-<section class="step" data-step-title="Personal Information">
-<fieldset >
+
  @if(isset($error))
 <div class="alert alert-danger" id="message">{{ $error }}</div>
 @endif	
 
-<div class="span4 pull-left">
-
-<h4>Personal Information </h4>
 <form id="pform" action="{{url("patients/add")}}" method="POST">
+<div class="span4 pull-left">
+<h4>Personal Information </h4>
 
 <div class="control-group">
+<label class="control-label" for="firstname">First name*</label>
 <div class="controls">
-<input type="text" class="input-xlarge " id="" value="{{Input::get('firstname')}}" name="firstname" required  placeholder="First Name"/>
+<input type="text" class="input-xlarge " id="" value="" name="firstname" required/>
 
 </div> <!-- /controls --> 
 </div>
 
 
 <div class="control-group">
+<label class="control-label" for="firstname">Last name*</label>
 <div class="controls">
-<input type="text" class="input-xlarge " id="" value="{{Input::get('lastname')}}" name="lastname" required placeholder="Last Name" />
-
+<input type="text" class="input-xlarge " id="" name="lastname" required />
 </div> <!-- /controls -->               
 </div> <!-- /control-group -->
 
 <div class="control-group">
-<label class="control-label" for="username">Gender</label>
-<div class="controls">
-<select class="form-control"  data-placement="gender" name="gender" required>
-<option disabled> Select Gender</option>
-<option></option>
-<option>Male</option>
-<option>Female</option>
-</select>
-</div> 
+<label class="control-label" for="gender">Gender*</label>
+	<div class="controls">
+		<select class="form-control"  data-placement="gender" name="gender" required/>
+			<option disabled> Select Gender</option>
+			<option></option>
+			<option>Male</option>
+			<option>Female</option>
+		</select>
+	</div> 
 </div> <!-- /control-group -->
 
 <div class="control-group">
- <label class="control-label" for="username">Marital Status</label>
+<label class="control-label" for="marital_status">Marital Status*</label>
 <div class="controls">
-<select class="form-control"  data-placement="marital_status" name="marital_status"  value = "">
+<select class="form-control"  data-placement="marital_status" name="marital_status" required/>
 <option disabled> Select Marital Status</option>
- <option></option>
+<option></option>
 <option>Single</option>
 <option>Married</option>
 <option>Separated</option>
@@ -57,15 +56,14 @@
 
 <div class="control-group">
 <div class="controls">
-<input type="text" class="input-xlarge" id="birthdate" value="{{Input::get('birth')}}"  name="birth" required  placeholder=" Date of birth"/>
-
+<input type="text" class="input-xlarge" id="birthdate" name="birth" required  placeholder=" Date of birth"/>
 </div> <!-- /controls --> 
 </div><!-- /control-group --> 
 
 <div class="control-group">
-<label class="control-label" for="username">Nationality</label>
+<label class="control-label" for="username">Nationality*</label>
 <div class="controls">
-<select class="form-control"  data-placement="nationality" name="nationality"  value = "">
+<select class="form-control"  data-placement="nationality" name="nationality" required>
 <option disabled> Select Nationality</option>
  <option></option>
 <option value='AF'>Afghan</option>
@@ -313,9 +311,9 @@
 </div> <!-- /control-group -->
 
 <div class="control-group">
-     <label class="control-label" for="username">Category</label>
+     <label class="control-label" for="username">Category*</label>
 <div class="controls">
-<select class="form-control"  data-placement="designation" name="designation"  value = "">
+<select class="form-control"  data-placement="designation" name="designation" required>
 <option disabled> Select Category</option>
 <option></option>
 <option>Student</option>
@@ -328,22 +326,23 @@
 </div> <!-- /control-group -->
 
     <div class="control-group">
-        <label class="control-label" for="username">Religion</label>
-<div class="controls">
-<select class="form-control"  data-placement="gender" name="religion">
-<option disabled>Select Religion</option>
-<option></option>
-<option>Christian</option>
-<option>Islamic</option>
-<option>Paganism</option>
+    <label class="control-label" for="username">Religion*</label>
+	<div class="controls">
+	<select class="form-control"  data-placement="gender" name="religion">
+	<option disabled>Select Religion</option>
+	<option></option>
+	<option>Christian</option>
+	<option>Islamic</option>
+	<option>Paganism</option>
 
 </select>
 </div> <!-- /controls -->
 </div> <!-- /control-group -->
 
 <div class="control-group">
+<label class="control-label" for="tribe">Tribe*</label>
 <div class="controls">
-<input type="text" class="input-xlarge " id="" value="{{Input::get('tribe')}}" name="tribe" placeholder="Tribe" />
+<input type="text" class="input-xlarge" name="tribe" required/>
 </div> <!-- /controls -->
 </div> <!-- /control-group -->
 
@@ -354,24 +353,24 @@
      <h4 class = "text-left">Contact Information</h4>
 
     <div class="control-group">
-
+    <label class="control-label" for="phone_no">Mobile Number*</label>
         <div class="controls">
-            <input type="text" class="input-xlarge " id="phone_no" name="phone_no" placeholder = "Mobile number">
+            <input type="text" class="input-xlarge " id="phone_no" name="phone_no" required>
 
         </div> <!-- /controls -->
     </div> <!-- /control-group -->
 
     <div class="control-group">
-
+    <label class="control-label" for="telephone_no">Tel Number</label>
         <div class="controls">
-            <input type="text" class="input-xlarge " id="" name="telephone_no" placeholder = "Telephone number">
+            <input type="text" class="input-xlarge " id="" name="telephone_no">
 
         </div> <!-- /controls -->
     </div> <!-- /control-group -->
     <div class="control-group">
-
+    <label class="control-label" for="email">Email</label>
         <div class="controls">
-            <input type="email" class="input-xlarge " id="" name="email" placeholder = "Email">
+            <input type="email" class="input-xlarge " id="" name="email">
 
         </div> <!-- /controls -->
     </div>
@@ -419,30 +418,27 @@
 </div> <!-- /control-group -->
 <div class="control-group">
 <div class="controls">
-<input type="text" class="input-xlarge " id="" value="{{Input::get('location')}}" name="location"    placeholder="Location"/>
-
+<input type="text" class="input-xlarge " id="" name="location"    placeholder="Location"/>
 </div> <!-- /controls -->               
 </div> <!-- /control-group -->
+
 <div class="control-group">
 <div class="controls">
-<input type="text" class="input-xlarge " id="" value="{{Input::get('workingplace')}}" name="workingplace"  placeholder="Working Place"/>
-
-
+<input type="text" class="input-xlarge " id="" name="workingplace"  placeholder="Working Place"/>
 </div> <!-- /controls -->               
 </div> <!-- /control-group -->
+
 <div class="control-group">
 <div class="controls">
 <button type="reset" class="btn btn-danger" id="cancel" name = "cancel" value = "Cancel" >Reset</button>
 <button type="submit" class="btn btn-primary" id="psave">Save</button>
 </div> <!-- /controls -->               
-</div> <!-- /control-group -->
+</div>
+ <!-- /control-group -->
+<div style="text-left">
+<p><b>All fields marked with * are required</b></p>
+</div>
 
 </form>
-
 </div>	
-
-</fieldset>	
-
-</section>
-</div>
 @stop

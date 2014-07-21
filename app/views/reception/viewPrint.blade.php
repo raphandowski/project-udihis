@@ -4,7 +4,7 @@
     
     function myCardCode(){
         var prtCont = document.getElementById("myCard");
-        var wpnt    = window.open('','','left=0,top=0,width=800,height=900,toolbar=0,scrollbars=0,status=0');
+        var wpnt    = window.open('','','left=0,top=0,width=250,height=250,toolbar=0,scrollbars=0,status=0');
         wpnt.document.write(prtCont.innerHTML);
         wpnt.document.close();
         wpnt.focus();
@@ -43,9 +43,9 @@
 
                     context.font = " normal 12px tahoma";
 
-                    context.fillText("{{Patient::fullname($newpatient)}}",100,162);
-                    context.fillText("{{$newpatient->filenumber}}",120,183);
-                    context.fillText("{{ date('D d M Y',time()) }}",140,205);
+                    context.fillText("{{Patient::fullname($newpatient)}}",200,180);
+                    context.fillText("{{$newpatient->filenumber}}",210,198);
+                    context.fillText("{{ date('D d M Y',time()) }}",220,218);
                 };
                 bg.src="{{ asset('packages/bootstrap/img/app_card.png')}}";
 

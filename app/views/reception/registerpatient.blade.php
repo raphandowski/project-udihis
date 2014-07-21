@@ -406,7 +406,7 @@
 <h4>Next of Kin Information </h4>
 <div class="control-group">
 <div class="controls">
-<input type="text" class="input-xlarge " id="" value="{{Input::get('fullname')}}" name="fullname" required  placeholder="Full Name"/>
+<input type="text" class="input-xlarge " id="" value="{{Input::get('fullname')}}" name="fullname" required  placeholder="Full Name*"/>
 
 </div> <!-- /controls -->               
 </div> <!-- /control-group -->

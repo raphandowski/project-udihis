@@ -24,7 +24,7 @@
 <form id="pform" action="{{url("patient/edit/$patient->id")}}" method="POST">
 
 <div class="control-group">
-<label class="control-label" for="username">First Name</label>
+<label class="control-label" for="username">First Name*</label>
 <div class="controls">
 <input type="text" class="input-xlarge " id="" value="{{$patient->firstname}}" name="first_name" required />
 
@@ -33,7 +33,7 @@
 
 
 <div class="control-group">
-<label class="control-label" for="username">Last Name</label>
+<label class="control-label" for="username">Last Name*</label>
 <div class="controls">
 <input type="text" class="input-xlarge " id="" value="{{$patient->lastname}}" name="last_name" required/>
 
@@ -41,7 +41,7 @@
 </div> <!-- /control-group -->
 
 <div class="control-group">
-<label class="control-label" for="username">Gender</label>
+<label class="control-label" for="username">Gender*</label>
 <div class="controls">
 <select class="form-control"  data-placement="gender" name="gender"  value = "{{$patient->gender}}" required>
 <option disabled> Select Gender</option>
@@ -53,7 +53,7 @@
 </div> <!-- /control-group -->
 
 <div class="control-group">
-<label class="control-label" for="username">Marital Status</label>
+<label class="control-label" for="username">Marital Status*</label>
 <div class="controls">
 <select class="form-control"  data-placement="marital_status" name="marital_status"  value = "{{$patient->marital_status}}">
 <option disabled> Select Marital Status</option>
@@ -65,7 +65,7 @@
 </div> <!-- /control-group -->
 
 <div class="control-group">
-<label class="control-label" for="username">Birth Date</label>
+<label class="control-label" for="username">Birth Date*</label>
 <div class="controls">
 <input type="text" class="input-xlarge" id="birthdate" value="{{$patient->birth}}"  name="birth_date" required />
 
@@ -73,7 +73,7 @@
 </div><!-- /control-group --> 
 
 <div class="control-group">
-<label class="control-label" for="username">Nationality</label>
+<label class="control-label" for="username">Nationality*</label>
 <div class="controls">
 <select class="form-control"  data-placement="nationality" name="nationality"  value = "{{$patient->nationality}}">
 <option disabled> Select Nationality</option>
@@ -323,7 +323,7 @@
 </div> <!-- /control-group -->
 
 <div class="control-group">
-<label class="control-label" for="username">Designation</label>
+<label class="control-label" for="username">Designation*</label>
 <div class="controls">
 <select class="form-control"  data-placement="designation" name="designation"  value = "{{$patient->designation}}">
 <option disabled> Select Category</option>
@@ -338,7 +338,7 @@
 </div> <!-- /control-group -->
 
 <div class="control-group">
-<label class="control-label" for="username">Religion</label>
+<label class="control-label" for="username">Religion*</label>
 <div class="controls">
 <select class="form-control"  data-placement="religion" name="religion" value = "{{$patient->religion}}">
 <option disabled>Select Religion</option>
@@ -350,7 +350,7 @@
 </div> <!-- /control-group -->
 
 <div class="control-group">
-<label class="control-label" for="username">Tribe</label>
+<label class="control-label" for="username">Tribe*</label>
 <div class="controls">
 <input type="text" class="input-xlarge " id="" value="{{$patient->tribe}}" name="tribe"  />
 </div> <!-- /controls -->
@@ -363,7 +363,7 @@
 <h4 class = "text-left">Contact Information</h4>
 
 <div class="control-group">
-
+<label class="control-label" for="phone_no">Mobile Number*</label>
 <div class="controls">
 <input type="text" class="input-xlarge " id="phone_no" name="phone_no" value = "{{$patient->phone_no}}">
 
@@ -371,7 +371,7 @@
 </div> <!-- /control-group -->
 
 <div class="control-group">
-
+ <label class="control-label" for="telephone_no">Tel Number</label>
 <div class="controls">
 <input type="text" class="input-xlarge " id="telephone_no" value="{{$patient->telephone_no}}" name="telephone_no" placeholder = "">
 
@@ -379,7 +379,7 @@
 </div> <!-- /controls -->
 </div> <!-- /control-group -->
 <div class="control-group">
-
+<label class="control-label" for="email">Email</label>
 <div class="controls">
 <input type="email" class="input-xlarge " id="" name="email"  value = "{{$patient->email}}">
 
@@ -419,25 +419,25 @@
 <h4>Next of Kin Information </h4>
 <div class="control-group">
 <div class="controls">
-<input type="text" class="input-xlarge " id="" value = "{{$patient->fullname}}" name="fullname"/>
+<input type="text" class="input-xlarge " id="" value = "{{$patient->fullname}}" name="fullname" placeholder="fullname*"/>
 
 </div> <!-- /controls -->               
 </div> <!-- /control-group -->
 <div class="control-group">
 <div class="controls">
-<input type="text" class="input-xlarge " id="" value = "{{$patient->phone2}}" name="phone2"/>
+<input type="text" class="input-xlarge " id="" value = "{{$patient->phone2}}" name="phone2" placeholder="phone number"/>
 
 </div> <!-- /controls -->               
 </div> <!-- /control-group -->
 <div class="control-group">
 <div class="controls">
-<input type="text" class="input-xlarge " id="" value = "{{$patient->location}}" name="location" />
+<input type="text" class="input-xlarge " id="" value = "{{$patient->location}}" name="location" placeholder="location"/>
 
 </div> <!-- /controls -->               
 </div> <!-- /control-group -->
 <div class="control-group">
 <div class="controls">
-<input type="text" class="input-xlarge " id="" value = "{{$patient->workingplace}}" name="workingplace"  />
+<input type="text" class="input-xlarge " id="" value = "{{$patient->workingplace}}" name="workingplace" placeholder="working place"  />
 
 
 </div> <!-- /controls -->               

@@ -55,8 +55,9 @@
 </div> <!-- /control-group -->
 
 <div class="control-group">
+<label class="control-label" for="username">Birth date*</label>
 <div class="controls">
-<input type="text" class="input-xlarge" id="birthdate" name="birth" required  placeholder=" Date of birth"/>
+<input type="text" class="input-xlarge" id="birthdate" name="birth" required  />
 </div> <!-- /controls --> 
 </div><!-- /control-group --> 
 

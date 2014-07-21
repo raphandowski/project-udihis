@@ -11,12 +11,25 @@ $individual= User::find(Auth::user()->id);
 <div class="widget-header">
 <h3>Basic Information </h3>
 </div>
+<?php
+//checking if link is comming from changing password route
+if(isset($_GET['password'])){
+?>
 
+<script type="text/javascript">
+ $(document).ready(function(){
+ 	$("#myTab a:last").tab("show");
+ })
+
+</script>
+<?php
+}
+?>
 <div class="widget-content">
 <div class="bs-docs-example">
 <ul id="myTab" class="nav nav-tabs">
-<li class="active"><a href="#profile" data-toggle="tab">Profile</a></li>
-<li><a href="#password" data-toggle="tab">Change Password</a></li>              
+<li id='prof' class="active"><a href="#profile" data-toggle="tab">Profile</a></li>
+<li id='pass'><a href="#password" data-toggle="tab">Change Password</a></li>              
 </ul>
 <div id="myTabContent" class="tab-content">
 <div class="tab-pane fade in active" id="profile">
@@ -65,7 +78,7 @@ $individual= User::find(Auth::user()->id);
 <div style="position:relative;">
 	Image{{Form::file('img',array('class'=>'')) }}
 </div>
-<br
+<br>
 <div class="control-group">	
 <div class="controls">
 <button type="submit" class="btn">Update</button>
@@ -77,27 +90,36 @@ $individual= User::find(Auth::user()->id);
 </form>
 </div>
 <div class="tab-pane fade" id="password">
+@if(Session::has('message'))
+			<div class="alert alert-success" style="text-align: center">{{Session::get('message')}}</div>
+			@endif
 <form class="form-horizontal" id="password_form" action="{{URL::to('reception/profile/password/'. Auth::user()->id)}}" method="POST">
 <div class="span4 pull-left">
 <div class="control-group">											
 <label class="control-label" for="password1">Current Password*</label>
 <div class="controls">
-<input type="password" class="input-xlarge" id="password1" name = "password1" value="">
-@if($errors->has('password1')){{$error->first('password1')}}@endif
+<input type="password" class="input-xlarge" id="password1" name = "Old_password" value="">
+@if($errors->has('Old_password'))
+{{$errors->first('Old_password')}}
+@endif
 </div> <!-- /controls -->				
 </div> <!-- /control-group -->
 <div class="control-group">											
 <label class="control-label" for="password1">New Password*</label>
 <div class="controls">
-<input type="password" class="input-xlarge" id="password1" name = "password2" value="">
-@if($errors->has('password2')){{$error->first('password2')}}@endif
+<input type="password" class="input-xlarge" id="password1" name = "New_password" value="">
+@if($errors->has('New_password'))
+{{$errors->first('New_password')}}
+@endif
 </div> <!-- /controls -->				
 </div> <!-- /control-group -->
 <div class="control-group">											
 <label class="control-label" for="password2">Confirm Password*</label>
 <div class="controls">
-<input type="password" class="input-xlarge" id="password2" name = "password3" value="">
-@if($errors->has('password3')){{$error->first('password3')}}@endif
+<input type="password" class="input-xlarge" id="password2" name = "Confirm_password" value="">
+@if($errors->has('Confirm_password'))
+{{$errors->first('confirm_password')}}
+@endif
 </div> <!-- /controls -->				
 </div>
 <div class="controls">

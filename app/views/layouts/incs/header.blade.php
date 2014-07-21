@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">   
     <!-- bootstrap includes --> 
+    {{HTML::script('packages/bootstrap/js/jquery-1.9.1.min.js')}}
     {{HTML::style('packages/bootstrap/css/bootstrap.min.css')}}
     {{HTML::style('packages/bootstrap/css/bootstrap-responsive.min.css')}}
     {{HTML::style('packages/bootstrap/css/font-awesome.min.css')}}

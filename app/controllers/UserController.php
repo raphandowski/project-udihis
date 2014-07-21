@@ -150,23 +150,36 @@ class UserController extends BaseController {
         return Redirect::back();
 
     } 
-      public function passwordUpdate($id){
+     public function passwordUpdate($id){
     $validator = Validator::make(Input::all(), 
       array(
-        'password1' => 'requred',
-        'password2' => 'requred|min:6',
-        'password3' => 'requred|same:password2',
+        'Old_password' => 'required',
+        'New_password' => 'required|min:2',
+        'Confirm_password' => 'required|same:New_password',
         )
       );
-    if ($validator->fails()){
-return Redirect::back()->withErrors($validator)
-                       ->withImputs();
-    }
+   if($validator->fails()){
+    return Redirect::to('reception/profile')
+    ->withErrors($validator);
+     }else  {
+  $user  =User::find(Auth::user()->id);
+  $Old_password = Input::get('Old_password');
+  $New_password =Input::get('New_password');
 
-    else
-    {
+  if(Hash::check($Old_password, $user->getAuthPassword())){
+      $user->password  = Hash::make($New_password);
+      if($user->save()){
+       Session::flash('message', 'Successfully changed!');
+        return Redirect::to(URL::to('reception/profile') . '?password=1')
+                    ->withInput()
+                    ->withErrors($validator);
+}
 
-
-    }
-    }
+}else
+Session::flash('message', 'Successfully not changed!');
+        return Redirect::to(URL::to('reception/profile') . '?password=1')
+                    ->withInput()
+                    ->withErrors($validator);
+}
+  }
 }
